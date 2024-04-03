@@ -1,5 +1,3 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
 -- You can also add or configure plugins by creating files in this `plugins/` folder
 -- Here are some examples:
 
@@ -82,4 +80,23 @@ return {
       )
     end,
   },
+  {
+    "f-person/auto-dark-mode.nvim",
+    lazy=false,
+    config = --function()
+      -- require('f-person/auto-dark-mode.nvim').setup(
+      {
+      update_interval = 1000,
+      set_dark_mode = function()
+        vim.api.nvim_set_option("background", "dark")
+        -- vim.cmd("colorscheme gruvbox")
+      end,
+      set_light_mode = function()
+        vim.api.nvim_set_option("background", "light")
+        -- vim.cmd("colorscheme gruvbox")
+      end,
+    }--)
+    -- end
+  },
+  {"ellisonleao/glow.nvim",lazy=false, config = true, cmd = "Glow"},
 }
