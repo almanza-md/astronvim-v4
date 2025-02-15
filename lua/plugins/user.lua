@@ -82,10 +82,10 @@ return {
   },
   {
     "f-person/auto-dark-mode.nvim",
-    lazy=false,
-    config = --function()
-      -- require('f-person/auto-dark-mode.nvim').setup(
-      {
+    lazy = false,
+    --function()
+    config =     -- require('f-person/auto-dark-mode.nvim').setup(
+{
       update_interval = 1000,
       set_dark_mode = function()
         vim.api.nvim_set_option("background", "dark")
@@ -95,8 +95,9 @@ return {
         vim.api.nvim_set_option("background", "light")
         -- vim.cmd("colorscheme gruvbox")
       end,
-    }--)
+    }, --)
     -- end
   },
-  {"ellisonleao/glow.nvim",lazy=false, config = true, cmd = "Glow"},
+  { "ellisonleao/glow.nvim", lazy = false, config = true, cmd = "Glow" },
+  { "christoomey/vim-tmux-navigator", laxy = false },
 }
